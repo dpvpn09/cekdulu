@@ -1,7 +1,40 @@
 #!/bin/bash
+if [ "${EUID}" -ne 0 ]; then
+		echo "You need to run this script as root"
+		exit 1
+fi
+if [ "$(systemd-detect-virt)" == "openvz" ]; then
+		echo "OpenVZ is not supported"
+		exit 1
+fi
+red='\e[1;31m'
+green='\e[0;32m'
+NC='\e[0m'
+MYIP=$(wget -qO- icanhazip.com);
+IZIN=$( curl https://raw.githubusercontent.com/dpvpn09/gaspoll/main/ipvps | grep $MYIP )
+if [ $MYIP = $IZIN ]; then
+echo -e "${green}Permission Accepted...${NC}"
+else
+echo -e "${red}Permission Denied!${NC}";
+echo "Please Contact Admin"
+echo "Telegram t.me/Dpvpn"
+echo "WA 081285970456"
+rm -f setup.sh
+exit 0
+fi
 clear
+m="\033[0;1;36m"
+y="\033[0;1;37m"
+yy="\033[0;1;31m"
+m1="\033[1;34m"
+ISP=$(curl -s ipinfo.io/org | cut -d " " -f 2-10 )
+CITY=$(curl -s ipinfo.io/city )
+WKT=$(curl -s ipinfo.io/timezone )
+IPVPS=$(curl -s ifconfig.me/ip )
 echo -e ""
-echo -e "==========================-TUANYZ-=========================="
+echo -e "DP VPN"
+echo -e ""
+echo -e "==========================-DP VP-=========================="
 echo -e "* menu         : List of Main Commands"
 echo -e ""
 echo -e "=========================-SSH & OpenVPN-========================"
