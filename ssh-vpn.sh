@@ -41,96 +41,6 @@ SysVStartPriority=99
 WantedBy=multi-user.target
 END
 
-# Getting Proxy Template
-wget -q -O /usr/local/bin/edu-proxy https://raw.githubusercontent.com/dpvpn09/cekdulu/main/proxy-templated.py
-chmod +x /usr/local/bin/edu-proxy
-
-# Installing Service
-cat > /etc/systemd/system/edu-proxy.service << END
-[Unit]
-Description=Python Edu Proxy By Borneo Service
-Documentation=https://borneo.tech
-After=network.target nss-lookup.target
-
-[Service]
-Type=simple
-User=root
-CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
-AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
-NoNewPrivileges=true
-ExecStart=/usr/bin/python -O /usr/local/bin/edu-proxy 2082
-Restart=on-failure
-
-[Install]
-WantedBy=multi-user.target
-END
-
-systemctl daemon-reload
-systemctl enable edu-proxy
-systemctl restart edu-proxy
-
-clear
-
-# Getting Proxy Template Ssl
-wget -q -O /usr/local/bin/edu-proxyssl https://raw.githubusercontent.com/dpvpn09/cekdulu/main/proxy-templatedssl.py
-chmod +x /usr/local/bin/edu-proxyssl
-
-# Installing Service
-cat > /etc/systemd/system/edu-proxyssl.service << END
-[Unit]
-Description=Python Edu Ssl Proxy By Borneo Service
-Documentation=https://lestakun.tech
-After=network.target nss-lookup.target
-
-[Service]
-Type=simple
-User=root
-CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
-AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
-NoNewPrivileges=true
-ExecStart=/usr/bin/python -O /usr/local/bin/edu-proxyssl
-Restart=on-failure
-
-[Install]
-WantedBy=multi-user.target
-END
-
-systemctl daemon-reload
-systemctl enable edu-proxyssl
-systemctl restart edu-proxyssl
-
-clear
-
-# Getting Proxy Template Ovpn
-wget -q -O /usr/local/bin/edu-proxyovpn https://raw.githubusercontent.com/dpvpn09/cekdulu/main/proxy-templatedovpn.py
-chmod +x /usr/local/bin/edu-proxyovpn
-
-# Installing Service
-cat > /etc/systemd/system/edu-proxyovpn.service << END
-[Unit]
-Description=Python Edu Ovpn Proxy By Borneo Service
-Documentation=https://lestakun.tech
-After=network.target nss-lookup.target
-
-[Service]
-Type=simple
-User=root
-CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
-AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
-NoNewPrivileges=true
-ExecStart=/usr/bin/python -O /usr/local/bin/edu-proxyovpn 2086
-Restart=on-failure
-
-[Install]
-WantedBy=multi-user.target
-END
-
-systemctl daemon-reload
-systemctl enable edu-proxyovpn
-systemctl restart edu-proxyovpn
-
-clear
-
 # nano /etc/bin/wstunnel
 cat > /etc/bin/wstunnel <<-END
 #!/bin/sh -e
@@ -179,7 +89,7 @@ sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
 apt-get --reinstall --fix-missing install -y bzip2 gzip coreutils wget screen rsyslog iftop htop net-tools zip unzip wget net-tools curl nano sed screen gnupg gnupg1 bc apt-transport-https build-essential dirmngr libxml-parser-perl neofetch git lsof
 echo "clear" >> .profile
 echo "neofetch" >> .profile
-echo "echo By TuanYZ" >> .profile
+echo "echo By DP VPN" >> .profile
 echo "echo Ketik menu Untuk Melihat Options" >> .profile
 
 # install webserver
