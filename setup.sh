@@ -66,7 +66,7 @@ clear
 echo " "
 echo "Installation has been completed!!"
 echo " "
-echo "=================================-TuanYZ-===========================" | tee -a log-install.txt
+echo "=================================-DP VPN-===========================" | tee -a log-install.txt
 echo "" | tee -a log-install.txt
 echo "--------------------------------------------------------------------------------" | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
