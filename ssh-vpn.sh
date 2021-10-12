@@ -297,6 +297,8 @@ wget -O /usr/bin/user-limit https://raw.githubusercontent.com/dpvpn09/cekdulu/ma
 wget -O cfd "https://raw.githubusercontent.com/dpvpn09/cekdulu/main/cfd.sh"
 wget -O cff "https://raw.githubusercontent.com/dpvpn09/cekdulu/main/cff.sh"
 wget -O cfh "https://raw.githubusercontent.com/dpvpn09/cekdulu/main/cfh.sh"
+wget -O cfh "https://raw.githubusercontent.com/dpvpn09/cekdulu/main/running.sh"
+wget -O cfh "https://raw.githubusercontent.com/dpvpn09/cekdulu/main/autoreboot"
 chmod +x add-host
 chmod +x menu
 chmod +x usernew
@@ -330,6 +332,7 @@ chmod +x update
 chmod +x cfd
 chmod +x cff
 chmod +x cfh
+xhmod +x running
 chmod +x autoreboot
 echo "0 5 * * * root clear-log && reboot" >> /etc/crontab
 # remove unnecessary files
