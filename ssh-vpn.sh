@@ -292,8 +292,6 @@ wget -O cff "https://raw.githubusercontent.com/dpvpn09/cekdulu/main/cff.sh"
 wget -O cfh "https://raw.githubusercontent.com/dpvpn09/cekdulu/main/cfh.sh"
 wget -O cfh "https://raw.githubusercontent.com/dpvpn09/cekdulu/main/running.sh"
 wget -O cfh "https://raw.githubusercontent.com/dpvpn09/cekdulu/main/autoreboot"
-wget -O /usr/bin/menu https://raw.githubusercontent.com/dpvpn09/cekdulu/main/update/menu.sh && chmod +x /usr/bin/menu
-wget -O /usr/bin/bannerku https://raw.githubusercontent.com/dpvpn09/cekdulu/main/update/bannerku && chmod +x /usr/bin/bannerku
 chmod +x add-host
 chmod +x menu
 chmod +x usernew
