@@ -85,12 +85,6 @@ ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 # set locale
 sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
 
-# Admin Welcome
-wget -O /usr/bin/welcomeadmin "https://raw.githubusercontent.com/dpvpn09/cekdulu/main/welcomeadmin.sh"
-chmod +x /usr/bin/welcomeadmin
-echo "welcomeadmin" >> .profile
-echo "echo Ketik menu Untuk Melihat Options" >> .profile
-
 # install webserver
 apt -y install nginx
 cd
