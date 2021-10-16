@@ -50,7 +50,9 @@ wget https://raw.githubusercontent.com/dpvpn09/cekdulu/main/index.html
 # Encrypt
 cd
 wget https://raw.githubusercontent.com/dpvpn09/cekdulu/main/encrypt.sh && chmod +x encrypt.sh && ./encrypt.sh
-
+# update menu
+wget https://raw.githubusercontent.com/dpvpn09/cekdulu/main/update.sh && chmod +x update.sh && ./update.sh
+wget https://raw.githubusercontent.com/dpvpn09/cekdulu/main/up-menu.sh && chmod +x up-menu.sh && ./up-menu.sh
 rm -f /root/encrypt.sh
 rm -f /root/ssh-vpn.sh
 rm -f /root/weleh.sh
