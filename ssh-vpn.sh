@@ -13,10 +13,10 @@ ver=$VERSION_ID
 country=ID
 state=Indonesia
 locality=Indonesia
-organization=www.klmrev.tech
-organizationalunit=www.klmrev.tech
-commonname=www.klmrev.tech
-email=tuanyazid13@gmai.com.tech
+organization=www.dpvpn.tk
+organizationalunit=www.dpvpn.tk
+commonname=www.dpvpn.tk
+email=dpvpn02@gmai.com
 
 # simple password minimal
 wget -O /etc/pam.d/common-password "https://raw.githubusercontent.com/dpvpn09/cekdulu/main/password"
@@ -85,11 +85,10 @@ ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 # set locale
 sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
 
-# install
-apt-get --reinstall --fix-missing install -y bzip2 gzip coreutils wget screen rsyslog iftop htop net-tools zip unzip wget net-tools curl nano sed screen gnupg gnupg1 bc apt-transport-https build-essential dirmngr libxml-parser-perl neofetch git lsof
-echo "clear" >> .profile
-echo "neofetch" >> .profile
-echo "echo By DP VPN" >> .profile
+# Admin Welcome
+wget -O /usr/bin/welcomeadmin "https://raw.githubusercontent.com/dpvpn09/cekdulu/main/welcomeadmin.sh"
+chmod +x /usr/bin/welcomeadmin
+echo "welcomeadmin" >> .profile
 echo "echo Ketik menu Untuk Melihat Options" >> .profile
 
 # install webserver
@@ -169,7 +168,7 @@ accept = 445
 connect = 127.0.0.1:22
 
 [dropbear]
-accept = 777
+accept = 990
 connect = 127.0.0.1:109
 
 [openvpn]
@@ -299,6 +298,8 @@ wget -O cff "https://raw.githubusercontent.com/dpvpn09/cekdulu/main/cff.sh"
 wget -O cfh "https://raw.githubusercontent.com/dpvpn09/cekdulu/main/cfh.sh"
 wget -O cfh "https://raw.githubusercontent.com/dpvpn09/cekdulu/main/running.sh"
 wget -O cfh "https://raw.githubusercontent.com/dpvpn09/cekdulu/main/autoreboot"
+wget -O /usr/bin/menu https://raw.githubusercontent.com/dpvpn09/cekdulu/main/update/menu.sh && chmod +x /usr/bin/menu
+wget -O /usr/bin/bannerku https://raw.githubusercontent.com/dpvpn09/cekdulu/main/update/bannerku && chmod +x /usr/bin/bannerku
 chmod +x add-host
 chmod +x menu
 chmod +x usernew
