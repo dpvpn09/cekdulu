@@ -6,8 +6,8 @@ MYIP=$(wget -qO- https://icanhazip.com);
 izin
 clear
 IP=$(wget -qO- https://icanhazip.com);
-if [[ "$domain" = "" ]]; then
-domain=$(cat /home/domain)
+if [[ "$IP" = "" ]]; then
+domain=$(cat /etc/v2ray/domain)
 else
 domain=$IP
 fi
@@ -38,7 +38,7 @@ echo -e "SSL/TLS        : $ssl"
 echo -e "WS Dropbear    : 8880"
 echo -e "WS OpenSSH     : 2095"
 echo -e "WS OpenVPN     : 2082"
-echo -e "WS TLS         : 222"
+echo -e "WS TLS         : 443"
 echo -e "Port Squid     : $sqd"
 echo -e "OpenVPN TCP    : http://$MYIP:81/client-tcp-$ovpn.ovpn"
 echo -e "OpenVPN UDP    : http://$MYIP:81/client-udp-$ovpn2.ovpn"
